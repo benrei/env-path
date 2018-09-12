@@ -1,9 +1,9 @@
 # env-path
-Loads environment variables from a chosen `.env` file into [`process.env`](https://nodejs.org/docs/latest/api/process.html#process_process_env), using  [dotenv](https://www.npmjs.com/package/dotenv).
+Loads environment variables from a chosen `.env` file into [`process.env`](https://nodejs.org/docs/latest/api/process.html#process_process_env), using  [dotenv](https://www.npmjs.com/package/dotenv) and [dotenv-expand](https://github.com/motdotla/dotenv-expand)
 
 > Adds  `.env` variables to `process.env`
 
-[![NPM version](https://img.shields.io/badge/env--path-v1.0.2-green.svg)](https://www.npmjs.com/package/env-path)
+[![NPM version](https://img.shields.io/badge/env--path-v1.0.3-green.svg)](https://www.npmjs.com/package/env-path)
 ## Installation
 
 ```sh
@@ -12,35 +12,51 @@ $ npm install -g env-path
 
 ## Usage
 
-Create a `.env` file
+Thanks to [dotenv-expand](https://github.com/motdotla/dotenv-expand), we can use variables inside our `.env` file.
+
+See simple `.env` file under
+
 
 ```
 API_KEY=key
 PORT=3000
-REACT_APP_FOO=bar
+MONGO_DB=myDB
+MONGO_URL=mongodb://localhost:27017/${MONGO_DB}
+REACT_APP_VERSION=$npm_package_version
 ```
+
+
+### Run
+
+#### Path
+Specify a path using the `-p` flag:
 
 >$ env-path -p path/.env-file node app.js
 
-### Without path
-Works similar to dotenv's Preload<br>
-See [dotenv docs](https://github.com/motdotla/dotenv)
-
->$ env-path node app.js
-
-### Path
-Specify a path using `env-path -p path/.env-file`, using the `-p` flag:
 
 ```sh
-Command-line:
-$ env-path -p path/.env-file app arg1 arg2 ...
-
 package.json
 "scripts": {
   "start"   : "env-path -p path/.env-file node app.js",
   "start2"  : "env-path -p path/.env.development node app.js",
   "start3"  : "env-path -p path/myFileName.env.myEnv node app.js",
   "build"   : "env-path -p path/.env.production react-scripts build"
+}
+```
+
+#### Without path
+Preloads dotenv and dotenv-expand. By doing this, you do not need to require and load dotenv and dotenv-expand in your application code.
+
+Works similar to dotenv's Preload<br>
+See [dotenv docs](https://github.com/motdotla/dotenv)
+
+>$ env-path node app.js
+
+```sh
+package.json
+"scripts": {
+  "start"   : "env-path node app.js",
+  "build"   : "env-path react-scripts build"
 }
 ```
 

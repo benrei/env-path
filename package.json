@@ -1,10 +1,11 @@
 {
   "name": "env-path",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Loads environment variables from a chosen .env file into process.env",
   "main": "lib/main.js",
   "dependencies": {
-    "dotenv": "^6.0.0"
+    "dotenv": "^6.0.0",
+    "dotenv-expand": "^4.2.0"
   },
   "scripts": {
     "start": "node lib/main.js"
