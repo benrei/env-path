@@ -1,0 +1,37 @@
+{
+  "name": "env-path",
+  "version": "1.0.0",
+  "description": "Loads environment variables from a chosen .env file into process.env",
+  "main": "lib/main.js",
+  "scripts": {
+    "start": "node lib/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benrei/env-path.git"
+  },
+  "keywords": [
+    "env-path",
+    "env",
+    ".env",
+    "environment",
+    "dotenv",
+    "path",
+    "confg",
+    "settings"
+  ],
+  "author": "Benjamin Reiersølmoen",
+  "bin": {
+    "env-path": "./bin/env-path"
+  },
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=3.10.8"
+  },
+  "preferGlobal": true,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benrei/env-path/issues"
+  },
+  "homepage": "https://github.com/benrei/env-path#readme"
+}
