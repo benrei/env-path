@@ -1,13 +1,13 @@
 # env-path
 Loads environment variables from a chosen `.env` file into [`process.env`](https://nodejs.org/docs/latest/api/process.html#process_process_env), using  [dotenv](https://www.npmjs.com/package/dotenv).
 
-> Choose `.env` file
+> Adds  `.env` variables to `process.env`
 
+[![NPM version](https://img.shields.io/badge/env--path-v1.0.2-green.svg)](https://www.npmjs.com/package/env-path)
 ## Installation
-[![NPM version](https://img.shields.io/badge/env--path-v1.0.0-green.svg)](https://www.npmjs.com/package/env-path)
+
 ```sh
 $ npm install -g env-path
-$ npm install env-path
 ```
 
 ## Usage
@@ -20,15 +20,16 @@ PORT=3000
 REACT_APP_FOO=bar
 ```
 
+>$ env-path -p path/.env-file node app.js
+
 ### Without path
-Works similar to dotenv's Preload
-```sh
-Command-line:
-$ env-path node app.js
-```
+Works similar to dotenv's Preload<br>
+See [dotenv docs](https://github.com/motdotla/dotenv)
+
+>$ env-path node app.js
 
 ### Path
-Specify path of a `.env`-file, using the `-p` flag:
+Specify a path using `env-path -p path/.env-file`, using the `-p` flag:
 
 ```sh
 Command-line:
