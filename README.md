@@ -3,11 +3,11 @@ Loads environment variables from a chosen `.env` file into [`process.env`](https
 
 > Adds  `.env` variables to `process.env`
 
-[![NPM version](https://img.shields.io/badge/env--path-v1.0.3-green.svg)](https://www.npmjs.com/package/env-path)
+[![NPM version](https://img.shields.io/badge/env--path-v1.0.4-green.svg)](https://www.npmjs.com/package/env-path)
 ## Installation
 
 ```sh
-$ npm install -g env-path
+$ npm install env-path
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ REACT_APP_VERSION=$npm_package_version
 
 
 ### Run
-
+Preloads dotenv and dotenv-expand. By doing this, you do not need to require and load dotenv and dotenv-expand in your application code.
 #### Path
 Specify a path using the `-p` flag:
 
@@ -37,15 +37,14 @@ Specify a path using the `-p` flag:
 ```sh
 package.json
 "scripts": {
-  "start"   : "env-path -p path/.env-file node app.js",
+  "build"   : "env-path -p path/.env.production, react-scripts build"
+  "start"   : "env-path -p path/.env-file react-script start",
   "start2"  : "env-path -p path/.env.development node app.js",
-  "start3"  : "env-path -p path/myFileName.env.myEnv node app.js",
-  "build"   : "env-path -p path/.env.production react-scripts build"
+  "start3"  : "env-path -p path/otherFileName.env node app.js",
 }
 ```
 
 #### Without path
-Preloads dotenv and dotenv-expand. By doing this, you do not need to require and load dotenv and dotenv-expand in your application code.
 
 Works similar to dotenv's Preload<br>
 See [dotenv docs](https://github.com/motdotla/dotenv)
