@@ -3,9 +3,17 @@ Loads environment variables from a chosen `.env` file into [`process.env`](https
 
 > Adds  `.env` variables to `process.env`
 
-[![NPM version](https://img.shields.io/badge/env--path-v1.0.4-green.svg)](https://www.npmjs.com/package/env-path)
-## Installation
+```sh
+package.json
+"scripts": {
+  "test"  : "env-path -p path/.env node app.js"
+  "build" : "env-path -p path/.env.production, react-scripts build"
+  "start" : "env-path -p otherPath/.env-file react-script start",
+}
+```
 
+## Installation
+[![NPM version](https://img.shields.io/badge/env--path-v1.0.4-blue.svg)](https://www.npmjs.com/package/env-path)
 ```sh
 $ npm install env-path
 ```
@@ -17,7 +25,7 @@ Thanks to [dotenv-expand](https://github.com/motdotla/dotenv-expand), we can use
 See simple `.env` file under
 
 
-```
+```sh
 API_KEY=key
 PORT=3000
 MONGO_DB=myDB
