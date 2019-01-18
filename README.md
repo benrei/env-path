@@ -13,7 +13,7 @@ package.json
 ```
 
 ## Installation
-[![NPM version](https://img.shields.io/badge/env--path-v1.0.4-blue.svg)](https://www.npmjs.com/package/env-path)
+[![NPM version](https://img.shields.io/npm/v/env-path.svg)](https://www.npmjs.com/package/env-path)
 ```sh
 $ npm install env-path
 ```

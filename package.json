@@ -1,6 +1,6 @@
 {
   "name": "env-path",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Loads environment variables from a chosen .env file into process.env",
   "main": "lib/main.js",
   "dependencies": {
