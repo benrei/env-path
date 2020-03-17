@@ -1,4 +1,5 @@
-# env-path
+# env-path ![npm](https://img.shields.io/npm/dw/env-path)
+
 Loads environment variables from a chosen `.env` file into [`process.env`](https://nodejs.org/docs/latest/api/process.html#process_process_env), using  [dotenv](https://www.npmjs.com/package/dotenv) and [dotenv-expand](https://github.com/motdotla/dotenv-expand)
 
 > Adds  `.env` variables to `process.env`
